@@ -13,7 +13,35 @@
 
   <body>
 
+    <div class="sticky">
+
+      <nav class="top-bar appName" data-topbar role="navigation">
+
+        <ul class="title-area" style="list-style: none;">
+          <li class="name">
+            <div id="top-bar_appName" class="text-center appName">
+              <div data-no-turbolink>
+                <%= link_to root_path do %>
+                  <h1>Real Talk</h1>
+                <% end %>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+
+        <ul class="right right-nav">
+          <li class="menu"></li>
+        </ul>
+      </nav>
+
+    </div>
+
     <%= yield %>
+
+    <div class="footer">
+      Test
+    </div>
 
   </body>
 </html>

@@ -1,4 +1,31 @@
-<h2>Hello World</h2>
-<p>
-  The time is now: <%= Time.now %>
-</p>
+
+
+  <div class="sticky">
+    <div class="row ">
+      <div class="small-6 text-center columns">
+        <%= image_tag("male_button.png", id: "male_button", class: "") %>
+      </div>
+
+      <div class="small-6 text-center columns">
+        <%= image_tag("female_button.png", id: "female_button", class: "") %>
+      </div>
+    </div>
+
+    <div class="row ">
+      <div class="small-6 text-center columns">
+        <%= image_tag("other_button.png", id: "other_button", class: "") %>
+      </div>
+
+      <div class="small-6 text-center columns">
+        <%= image_tag("parents_button.png", id: "parents_button", class: "") %>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function() { 
+      var button_width = $("#locations_button").width();
+      $(".nav_button").height(button_width);
+    });  
+  </script>
+
