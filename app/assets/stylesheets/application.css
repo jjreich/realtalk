@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
+ *= require font-awesome
 
  */
 
@@ -24,4 +25,44 @@
  .appName a, a:hover, a:active, a:visited {
 
  	color: white;
+ }
+
+ .footer {
+
+ 	background-color: #EEE;
+ 	position:fixed;
+    bottom:0px;
+ }
+
+ .footer a, a:hover, a:active, a:visited {
+
+ 	margin-top: 0.25em;
+ 	color: #AAA;
+ }
+
+ .footer p {
+
+ 	font-size: 0.75em;
+ 	margin-bottom: 0.25em;
+ 	color: #AAA;
+ }
+
+ #male_button {
+
+ 	padding: 1em 0 0 0.5em;
+ }
+
+ #female_button {
+
+ 	padding: 1em 0.5em 0 0;
+ }
+
+ #other_button {
+
+ 	padding: 1em 0 0 0.5em;
+ }
+
+ #parents_button {
+
+ 	padding: 1em 0.5em 0 0;
  }

@@ -17,22 +17,17 @@
 
       <nav class="top-bar appName" data-topbar role="navigation">
 
-        <ul class="title-area" style="list-style: none;">
-          <li class="name">
-            <div id="top-bar_appName" class="text-center appName">
-              <div data-no-turbolink>
-                <%= link_to root_path do %>
-                  <h1>Real Talk</h1>
-                <% end %>
-              </div>
-            </div>
-          </li>
+        <div class="row">
+          <div class="small-3 columns text-left">
+            <a class="fa fa-bars fa-2x"></a>
+          </div>
+          <div class="small-6 columns end text-center">
+            <%= link_to root_path do %>
+              <h1>Real Talk</h1>
+            <% end %>
+          </div>
+        </div>
 
-        </ul>
-
-        <ul class="right right-nav">
-          <li class="menu"></li>
-        </ul>
       </nav>
 
     </div>
@@ -40,7 +35,48 @@
     <%= yield %>
 
     <div class="footer">
-      Test
+      <div class="row">
+        <div class="small-3 columns text-center">
+          <div>
+            <a class="fa fa-user fa-2x"></a>
+          </div>
+          <div>
+            <p>
+              Stories
+            </p>
+          </div>
+        </div>
+        <div class="small-3 columns text-center">
+          <div>
+            <a class="fa fa-comment fa-2x"></a>
+          </div>
+          <div>
+            <p>
+              Comment
+            </p>
+          </div>
+        </div>
+        <div class="small-3 columns text-center">
+          <div>
+            <a class="fa fa-plus fa-2x"></a>
+          </div>
+          <div>
+            <p>
+              Share
+            </p>
+          </div>
+        </div>
+        <div class="small-3 columns text-center">
+          <div>
+            <a class="fa fa-ellipsis-h fa-2x"></a>
+          </div>
+          <div>
+            <p>
+              More
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
 
   </body>
