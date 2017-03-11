@@ -1,9 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @story.title %>
-</p>
+<div class="row">
+	<div class="small-12 columns text-center created_at_time">
+		<%= @story.created_at.strftime("%A %I:%M%p") %>
+	</div>
+</div>
+
+<% @story.sections.each do |section| %>
+
+	<div class="row">
+		<div class="small-10 small-offset-1 columns section_bubble">
+			<%= section.body %>
+		</div>
+	</div>
+<% end %>
+
+<br />
+<br />
 
 <%= link_to 'Add Section', new_section_path(:story_id => @story.id) %>
 

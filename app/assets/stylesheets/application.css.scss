@@ -29,6 +29,11 @@
  	color: white;
  }
 
+ .created_at_time {
+
+ 	color: #d7d7d7;
+ }
+
  .footer {
 
  	background-color: #EEE;
@@ -48,6 +53,15 @@
  	font-size: 0.75em;
  	margin-bottom: 0.25em;
  	color: #AAA;
+ }
+
+ .section_bubble {
+
+ 	background-color: #efeeee;
+ 	padding: .75em 2em;
+ 	margin-top: 1em;
+ 	border-radius: 3em 3em;
+
  }
 
  #male_button {
