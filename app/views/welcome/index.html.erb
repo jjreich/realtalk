@@ -3,21 +3,29 @@
   <div class="sticky">
     <div class="row ">
       <div class="small-6 text-center columns">
-        <%= image_tag("male_button.png", id: "male_button", class: "") %>
+        <%= link_to root_path do %>
+          <%= image_tag("male_button.png", id: "male_button", class: "") %>
+        <% end %>
       </div>
 
       <div class="small-6 text-center columns">
-        <%= image_tag("female_button.png", id: "female_button", class: "") %>
+        <%= link_to root_path do %>
+          <%= image_tag("female_button.png", id: "female_button", class: "") %>
+        <% end %>
       </div>
     </div>
 
     <div class="row ">
       <div class="small-6 text-center columns">
-        <%= image_tag("other_button.png", id: "other_button", class: "") %>
+        <%= link_to root_path do %>
+          <%= image_tag("other_button.png", id: "other_button", class: "") %>
+        <% end %>
       </div>
 
       <div class="small-6 text-center columns">
-        <%= image_tag("parents_button.png", id: "parents_button", class: "") %>
+        <%= link_to root_path do %>
+          <%= image_tag("parents_button.png", id: "parents_button", class: "") %>
+        <% end %>
       </div>
     </div>
   </div>
