@@ -6,13 +6,21 @@
 	</div>
 </div>
 
-<div class="row">
-	<div class="small-4 small-offset-1 columns"> 
-		<%= link_to comments_path do %>
-	  		<div class="fa fa-comment-o fa-2x comment_link_med"> <%= @story.comments.count %></div>
-	  	<% end %>
+<% if @story.category_id == 1 %>
+
+	<div class="row">
+		<div class="small-4 small-offset-1 columns"> 
+			<% if @story.comments.count == 0 %>
+				<div class="fa fa-comment-o fa-2x comment_link_med"> <%= @story.comments.count %></div>
+			<% else %>
+				<%= link_to comments_path(:story_id => @story.id) do %>
+			  		<div class="fa fa-comment-o fa-2x comment_link_med"> <%= @story.comments.count %></div>
+			  	<% end %>
+			<% end %>
+		</div>
 	</div>
-</div>
+
+<% end %>
 
 <% @story.sections.each do |section| %>
 
@@ -23,15 +31,70 @@
 	</div>
 <% end %>
 
+
+<% if (@story.category_id == 2 or @story.category_id == 3) %>
+	<%= link_to new_comment_path(:story_id => @story.id) do %>
+		<div class="small-10 small-offset-1 comment_link_med columns">
+			<div class="fa fa-comment-o"></div> Comment
+		</div>
+	<% end %>
+<% end %>
+
+<% if (@story.category_id == 2)%>
+
+	<div class="small-10 small-offset-1 columns">
+		<%= link_to comments_path(:story_id => @story.id) do %>
+			View all <%= @story.comments.count %> comments
+		<% end %>
+	</div>
+
+	<div class="small-10 small-offset-1 columns">
+		<% @story.comments.order(created_at: :desc).first(2).each do |comment|%> 
+			<%= comment.body %>
+		<% end %>
+	</div>
+<% end %>
+
+<% if (@story.category_id == 4) %>
+	<div class="row">
+		<div class="small-6 small-offset-1 columns"> 
+			<% if @story.comments.count == 0 %>
+				<div class="fa fa-comment-o fa-2x comment_link_med"> <%= @story.comments.count %> comments</div>
+			<% else %>
+				<%= link_to comments_path(:story_id => @story.id) do %>
+			  		<div class="fa fa-comment-o fa-2x comment_link_med"> <%= @story.comments.count %> comments</div>
+			  	<% end %>
+			<% end %>
+		</div>
+	</div>
+<% end %>
+
 <br />
 <br />
 
 <%= link_to 'Add Section', new_section_path(:story_id => @story.id) %>
 
 
+<% if @story.category_id == 1 %>
+	<%= link_to new_comment_path(:story_id => @story.id) do %>
+		<div class="small-10 small-offset-1 text-center comment_button columns">
+			<div class="fa fa-comment-o"></div> Comment
+		</div>
+	<% end %>
+<% end %>
 
-<%= link_to new_comment_path(:story_id => @story.id) do %>
-	<div class="small-10 small-offset-1 text-center comment_button columns">
-		<div class="fa fa-comment-o"></div> Comment
+<% if @story.category_id == 3 %>
+	<div class="row">
+		<div class="small-12 text-center swipe_up">
+			Swipe up to view <%= @story.comments.count %> comment
+		</div>
+	</div>
+<% end %>
+
+<% if @story.category_id == 4 %>
+	<div class="row">
+		<div class="small-12 text-center swipe_up">
+			Swipe up to comment
+		</div>
 	</div>
 <% end %>

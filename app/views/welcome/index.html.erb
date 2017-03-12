@@ -8,7 +8,7 @@
           <%= image_tag("male_button.png", id: "male_button", class: "") %>
         <% end %>
         <div>
-          <a class="fa fa-comment-o comment_link"> <span class="comment_number_small"><%= last_male.comments.count %></span></a>
+          <div class="fa fa-comment-o comment_link"> <span class="comment_number_small"><%= last_male.comments.count %></span></div>
         </div>
       </div>
 
@@ -18,7 +18,7 @@
           <%= image_tag("female_button.png", id: "female_button", class: "") %>
         <% end %>
         <div>
-          <a class="fa fa-comment-o comment_link"></a>
+          <div class="fa fa-comment-o comment_link"> <span class="comment_number_small"><%= last_female.comments.count %></span></div>
         </div>
       </div>
     </div>
@@ -30,7 +30,7 @@
           <%= image_tag("other_button.png", id: "other_button", class: "") %>
         <% end %>
         <div>
-          <a class="fa fa-comment-o comment_link"></a>
+          <div class="fa fa-comment-o comment_link"> <span class="comment_number_small"><%= last_other.comments.count %></span></div>
         </div>
       </div>
 
@@ -40,7 +40,7 @@
           <%= image_tag("parents_button.png", id: "parents_button", class: "") %>
         <% end %>
         <div>
-          <a class="fa fa-comment-o comment_link"></a>
+          <div class="fa fa-comment-o comment_link"> <span class="comment_number_small"><%= last_parents.comments.count %></span></div>
         </div>
       </div>
     </div>
