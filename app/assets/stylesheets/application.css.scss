@@ -29,6 +29,20 @@
  	color: white;
  }
 
+ .comment_button {
+
+ 	position:fixed;
+ 	color: #1cafa0;
+ 	font-size: 1.25em;
+ 	border-style: solid;
+ 	border-color: #1cafa0;
+ 	border-width: 1px;
+ 	border-radius: .5em;
+ 	padding-top: .7em;
+ 	padding-bottom: .7em;
+ 	bottom: 60px;
+ }
+
  .comment_link {
 
  	position: relative;
@@ -40,6 +54,18 @@
  .comment_link_med {
 
  	color: #1cafa0;
+ }
+
+ .comment_list {
+
+ 	color: #d7d7d7;
+ }
+
+ .comment_number_small {
+
+ 	position: relative;
+ 	font-size: 1.75em;
+ 	top: 5px;
  }
 
  .created_at_time {
@@ -75,6 +101,13 @@
  	margin-top: 1em;
  	border-radius: 3em 3em;
 
+ }
+
+ #comment_body {
+
+ 	border-style: none;
+ 	box-shadow: none;
+ 	height: 200px;
  }
 
  #male_button {

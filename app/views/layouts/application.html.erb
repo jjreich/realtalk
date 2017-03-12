@@ -19,7 +19,9 @@
 
         <div class="row">
           <div class="small-3 columns text-left" data-no-turbolink>
-            <a class="fa fa-bars fa-2x"></a>
+            <%= link_to root_path do %>
+              <div class="fa fa-bars fa-2x"></div>
+            <% end %>        
           </div>
           <div class="small-6 columns end text-center" data-no-turbolink>
             <%= link_to root_path do %>
@@ -36,15 +38,17 @@
 
     <div class="footer">
       <div class="row">
-        <div class="small-3 columns text-center">
-          <div>
-            <a class="fa fa-user fa-2x"></a>
-          </div>
-          <div>
-            <p>
-              Stories
-            </p>
-          </div>
+        <div class="small-3 columns text-center" data-no-turbolink>
+          <%= link_to root_path do %>
+            <div>
+              <a class="fa fa-user fa-2x"></a>
+            </div>
+            <div>
+              <p>
+                Stories
+              </p>
+            </div>
+          <% end %>
         </div>
         <div class="small-3 columns text-center">
           <div>

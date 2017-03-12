@@ -8,7 +8,9 @@
 
 <div class="row">
 	<div class="small-4 small-offset-1 columns"> 
-	  <a class="fa fa-comment-o fa-2x comment_link_med"></a>
+		<%= link_to comments_path do %>
+	  		<div class="fa fa-comment-o fa-2x comment_link_med"> <%= @story.comments.count %></div>
+	  	<% end %>
 	</div>
 </div>
 
@@ -26,5 +28,10 @@
 
 <%= link_to 'Add Section', new_section_path(:story_id => @story.id) %>
 
-<%= link_to 'Edit', edit_story_path(@story) %> |
-<%= link_to 'Back', stories_path %>
+
+
+<%= link_to new_comment_path(:story_id => @story.id) do %>
+	<div class="small-10 small-offset-1 text-center comment_button columns">
+		<div class="fa fa-comment-o"></div> Comment
+	</div>
+<% end %>
