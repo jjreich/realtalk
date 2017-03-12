@@ -3,29 +3,45 @@
   <div class="sticky">
     <div class="row ">
       <div class="small-6 text-center columns">
-        <%= link_to root_path do %>
+        <% last_male = Story.where(:category_id => '1').last %>
+        <%= link_to last_male do %>
           <%= image_tag("male_button.png", id: "male_button", class: "") %>
         <% end %>
+        <div>
+          <a class="fa fa-comment-o comment_link"></a>
+        </div>
       </div>
 
       <div class="small-6 text-center columns">
-        <%= link_to root_path do %>
+        <% last_female = Story.where(:category_id => '2').last %>
+        <%= link_to last_female do %>
           <%= image_tag("female_button.png", id: "female_button", class: "") %>
         <% end %>
+        <div>
+          <a class="fa fa-comment-o comment_link"></a>
+        </div>
       </div>
     </div>
 
     <div class="row ">
       <div class="small-6 text-center columns">
-        <%= link_to root_path do %>
+        <% last_other = Story.where(:category_id => '3').last %>
+        <%= link_to last_other do %>
           <%= image_tag("other_button.png", id: "other_button", class: "") %>
         <% end %>
+        <div>
+          <a class="fa fa-comment-o comment_link"></a>
+        </div>
       </div>
 
       <div class="small-6 text-center columns">
-        <%= link_to root_path do %>
+        <% last_parents = Story.where(:category_id => '4').last %>
+        <%= link_to last_parents do %>
           <%= image_tag("parents_button.png", id: "parents_button", class: "") %>
         <% end %>
+        <div>
+          <a class="fa fa-comment-o comment_link"></a>
+        </div>
       </div>
     </div>
   </div>

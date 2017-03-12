@@ -29,6 +29,19 @@
  	color: white;
  }
 
+ .comment_link {
+
+ 	position: relative;
+ 	color: #1cafa0;
+ 	left: 45px;
+ 	top: -25px;
+ }
+
+ .comment_link_med {
+
+ 	color: #1cafa0;
+ }
+
  .created_at_time {
 
  	color: #d7d7d7;
@@ -76,10 +89,10 @@
 
  #other_button {
 
- 	padding: 1em 0 0 0.5em;
+ 	padding: 0 0 0 0.5em;
  }
 
  #parents_button {
 
- 	padding: 1em 0.5em 0 0;
+ 	padding: 0 0.5em 0 0;
  }
