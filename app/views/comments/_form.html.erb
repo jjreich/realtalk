@@ -1,7 +1,7 @@
 <%= simple_form_for(@comment) do |f| %>
   <%= f.error_notification %>
 
-  <div class="sticky">
+  <div class="">
 
     <nav class="comment_top_bar appName" data-topbar role="navigation">
 
@@ -34,7 +34,7 @@
 	  </div>
 
 	  <div class="form-inputs">
-	    <%= f.input :body, :placeholder => "Tell us what you think about this story...", label: false %>
+	    <%= f.input :body, :placeholder => "Tell us what you think about this story...", label: false, :input_html => { :class => "form_body" } %>
 	  </div>
   </div>
 

@@ -12,6 +12,7 @@ class StoriesController < ApplicationController
   # GET /stories/1
   # GET /stories/1.json
   def show
+    @comment = Comment.new(:story_id => @story.id)
   end
 
   # GET /stories/new

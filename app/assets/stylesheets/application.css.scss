@@ -219,11 +219,33 @@
  	margin-top: 20px;
  }
 
- #comment_body {
+ .form_body {
 
  	border-style: none;
  	box-shadow: none;
  	height: 200px;
+ }
+
+ .form_body2 {
+
+    border-style: solid;
+    box-shadow: none;
+    height: 30px;
+    margin: 0;
+    border-radius: 1em;
+
+ }
+
+ .form_username2 {
+
+    border-radius: 1em;
+ }
+
+ .form_usersubmit2 {
+
+    padding-top: 25px;
+    font-size: 1.5em;
+    color: #aaa;
  }
 
  #male_button {

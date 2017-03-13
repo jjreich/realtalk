@@ -1,0 +1,25 @@
+<%= simple_form_for(@comment) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="row">
+
+    <div class="small-12 columns">
+      <%= f.input :body, :placeholder => "Type a comment...", label: false, :input_html => { :class => "form_body2" } %>
+    </div>
+	  <div class="small-6 columns user_name">
+		  <div class="form-inputs">
+		    <%= f.input :username, :placeholder => "User Name", label: false, required: true, :input_html => { :class => "form_username2" } %>
+		  </div>
+	  </div>
+
+    <div class="small-3 columns text-right end" data-no-turbolink>
+      <div class="">
+        <%= f.submit  "Submit", class: "form_usersubmit2" %>
+      </div>
+    </div>
+  </div>
+
+
+  <%= f.hidden_field :story_id %>
+  
+<% end %>

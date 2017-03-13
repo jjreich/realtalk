@@ -4,12 +4,12 @@
 	  <nav class="top-bar appName" data-topbar role="navigation">
 
 	    <div class="row">
-	      <div class="small-3 columns text-left" data-no-turbolink>
+	      <div class="small-2 columns text-left" data-no-turbolink>
 	        <%= link_to root_path do %>
 	          <div id="bars" class="fa fa-bars fa-2x"></div>
 	        <% end %>        
 	      </div>
-	      <div class="small-6 columns end text-center" data-no-turbolink>
+	      <div class="small-8 columns end text-center" data-no-turbolink>
 	        <%= link_to root_path do %>
 	          <h1>Story: <%= Category.find(@story.category_id).name %></h1>
 	        <% end %>
@@ -155,6 +155,18 @@
 			</div>
 		</div>
 	<% end %>
+
+	<% if @story.category_id == 4 %>
+
+		<div class="below_the_line">
+			<hr />
+			<div class="row">
+				<div class="small-10 small-offset-1 columns">
+					<%= render 'comments/form2' %>
+				</div>
+			</div>
+		</div>
+	<% end %>
 </div>
 
 <script>
@@ -162,7 +174,7 @@
 $(document).ready(function() { 
 	var windowHeight = $(window).height();
 	var pageBottom = windowHeight - 40;
-	var pageBelowBottom = windowHeight + 30;
+	var pageBelowBottom = windowHeight;
 	$(".swipe_up").css('top', pageBottom + 'px');
 	$(".below_the_line").css('top', pageBelowBottom + 'px');
 
