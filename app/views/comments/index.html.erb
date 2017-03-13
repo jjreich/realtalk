@@ -24,7 +24,7 @@
 <% @comments.order(created_at: :asc).each do |comment| %>
   <div class="row comment_list">
     <div class="small-8 small-offset-1 columns">
-      <%= comment.body %>
+      <b><%= comment.username %></b> <%= comment.body %>
     </div>
     <div class="small-2 text-right columns end">
       <%= time_ago_in_words(comment.created_at) %>

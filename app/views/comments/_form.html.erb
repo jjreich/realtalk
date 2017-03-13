@@ -26,10 +26,16 @@
 
   </div>
 
+  <div class="row">
+	  <div class="small-6 small-offset-3 columns user_name">
+		  <div class="form-inputs">
+		    <%= f.input :username, :placeholder => "User Name", label: false, required: true %>
+		  </div>
+	  </div>
 
-
-  <div class="form-inputs">
-    <%= f.input :body, :placeholder => "Tell us what you think about this story...", label: false %>
+	  <div class="form-inputs">
+	    <%= f.input :body, :placeholder => "Tell us what you think about this story...", label: false %>
+	  </div>
   </div>
 
   <%= f.hidden_field :story_id %>

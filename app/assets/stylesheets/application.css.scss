@@ -79,7 +79,12 @@
 
  .comment_list {
 
- 	color: #d7d7d7;
+ 	color: #aaa;
+ }
+
+ .comment_list b {
+
+ 	color: #111;
  }
 
  .comment_number_small {
@@ -188,6 +193,11 @@
  	color: #AAA;
  	position: fixed;
  	bottom: 60px;
+ }
+
+ .user_name {
+
+ 	margin-top: 20px;
  }
 
  #comment_body {
