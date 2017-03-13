@@ -112,6 +112,8 @@
       </div>
     </div>
 
+    <%= Impression.select(:ip_address).distinct.count %>
+
   <script>
     $(document).ready(function() { 
       var button_width = $("#locations_button").width();

@@ -1,0 +1,100 @@
+  <div class="sticky">
+
+    <nav class="top-bar appName" data-topbar role="navigation">
+
+      <div class="row">
+        <div class="small-3 columns text-left" data-no-turbolink>
+          <%= link_to root_path do %>
+            <div id="bars" class="fa fa-bars fa-2x"></div>
+          <% end %>        
+        </div>
+        <div class="small-6 columns end text-center" data-no-turbolink>
+          <%= link_to root_path do %>
+            <h1>Statistics</h1>
+          <% end %>
+        </div>
+      </div>
+
+    </nav>
+
+  </div>
+
+  <br />
+
+  <% unique_addresses = Impression.select(:ip_address).distinct.count %>
+  <% unique_commenters = Comment.select(:username).distinct.count %>
+  <% if (unique_commenters >= unique_addresses) %>
+  	<% commenter_rate = 100 %>
+  <% else %>
+  	<% commenter_rate = unique_commenters / unique_addresses * 100 %>
+  <% end %> 
+
+  <div class="row">
+  	<div class="small-12 columns">
+		Total number of unique IP addresses that have hit the website: <%= unique_addresses %>
+	</div>
+  </div>
+
+  <br />
+
+  <div class="row">
+  	<div class="small-12 columns">
+		Total number of unique commenters that have left comments: <%= unique_commenters %>
+	</div>
+  </div>
+
+    <br />
+
+
+  <div class="row">
+  	<div class="small-12 columns">
+		Comment Rate: <%= commenter_rate %>%
+	</div>
+  </div>
+
+    <div class="footer">
+      <div class="row">
+        <div class="small-3 columns text-center" data-no-turbolink>
+          <%= link_to root_path do %>
+            <div>
+              <a class="fa fa-user fa-2x"></a>
+            </div>
+            <div>
+              <p>
+                Stories
+              </p>
+            </div>
+          <% end %>
+        </div>
+        <div class="small-3 columns text-center">
+          <div>
+            <a class="fa fa-comment fa-2x"></a>
+          </div>
+          <div>
+            <p>
+              Comment
+            </p>
+          </div>
+        </div>
+        <div class="small-3 columns text-center">
+          <div>
+            <a class="fa fa-plus fa-2x"></a>
+          </div>
+          <div>
+            <p>
+              Share
+            </p>
+          </div>
+        </div>
+        <div class="small-3 columns text-center">
+          <div>
+            <a class="fa fa-ellipsis-h fa-2x"></a>
+          </div>
+          <div>
+            <p>
+              More
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
