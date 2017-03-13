@@ -146,10 +146,10 @@
 
 	<% if @story.category_id == 3 %>
 		<div class="row">
-			<div class="small-12 text-center below_the_line">
+			<div class="small-12 below_the_line">
 				<div class="small-10 small-offset-1 columns bottom_element">
 					<% @story.comments.order(created_at: :desc).each do |comment|%> 
-						<div><%= comment.body %></div>
+						<div><b><%= comment.username %></b> <%= comment.body %></div>
 					<% end %>
 				</div>	
 			</div>

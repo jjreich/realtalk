@@ -47,8 +47,14 @@
 
  .below_the_line {
 
+    color: #AAA;
     position: absolute;
     top: 750px;
+ }
+
+ .below_the_line b {
+
+    color: #111;
  }
 
  .bottom_element {
