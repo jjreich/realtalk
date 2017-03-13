@@ -162,7 +162,10 @@
 $(document).ready(function() { 
 	var windowHeight = $(window).height();
 	var pageBottom = windowHeight - 40;
+	var pageBelowBottom = windowHeight + 30;
 	$(".swipe_up").css('top', pageBottom + 'px');
+	$(".below_the_line").css('top', pageBelowBottom + 'px');
+
 });
 
 </script>

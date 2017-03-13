@@ -47,8 +47,8 @@
 
  .below_the_line {
 
-    position: relative;
-    top: 270px;
+    position: absolute;
+    top: 750px;
  }
 
  .bottom_element {
@@ -168,7 +168,6 @@
  	background-color: #efeeee;
  	margin-top: 1em;
  	border-radius: 3em 3em 0 0;
- 	display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
