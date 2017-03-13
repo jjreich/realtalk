@@ -1,4 +1,23 @@
+  <div class="sticky">
 
+    <nav class="top-bar appName" data-topbar role="navigation">
+
+      <div class="row">
+        <div class="small-3 columns text-left" data-no-turbolink>
+          <%= link_to root_path do %>
+            <div class="fa fa-bars fa-2x"></div>
+          <% end %>        
+        </div>
+        <div class="small-6 columns end text-center" data-no-turbolink>
+          <%= link_to root_path do %>
+            <h1>Real Talk</h1>
+          <% end %>
+        </div>
+      </div>
+
+    </nav>
+
+  </div>
 
   <div class="sticky">
     <div class="row ">
@@ -45,6 +64,53 @@
       </div>
     </div>
   </div>
+
+      <div class="footer">
+      <div class="row">
+        <div class="small-3 columns text-center" data-no-turbolink>
+          <%= link_to root_path do %>
+            <div>
+              <a class="fa fa-user fa-2x"></a>
+            </div>
+            <div>
+              <p>
+                Stories
+              </p>
+            </div>
+          <% end %>
+        </div>
+        <div class="small-3 columns text-center">
+          <div>
+            <a class="fa fa-comment fa-2x"></a>
+          </div>
+          <div>
+            <p>
+              Comment
+            </p>
+          </div>
+        </div>
+        <div class="small-3 columns text-center">
+          <div>
+            <a class="fa fa-plus fa-2x"></a>
+          </div>
+          <div>
+            <p>
+              Share
+            </p>
+          </div>
+        </div>
+        <div class="small-3 columns text-center">
+          <div>
+            <a class="fa fa-ellipsis-h fa-2x"></a>
+          </div>
+          <div>
+            <p>
+              More
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
 
   <script>
     $(document).ready(function() { 
