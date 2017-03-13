@@ -97,7 +97,7 @@
 
 		<div class="small-10 small-offset-1 columns bottom_element">
 			<% @story.comments.order(created_at: :desc).first(2).each do |comment|%> 
-				<%= comment.body %>
+				<div><%= comment.body %></div>
 			<% end %>
 		</div>
 	<% end %>
