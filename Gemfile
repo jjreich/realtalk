@@ -32,6 +32,7 @@ gem 'best_in_place'
 gem 'devise', '~> 3.4.0'
 gem 'cancancan', '~> 1.10'
 gem 'rolify'
+gem 'impressionist'
 
 gem "font-awesome-rails"
 
