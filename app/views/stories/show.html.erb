@@ -6,7 +6,7 @@
 	    <div class="row">
 	      <div class="small-3 columns text-left" data-no-turbolink>
 	        <%= link_to root_path do %>
-	          <div class="fa fa-bars fa-2x"></div>
+	          <div id="bars" class="fa fa-bars fa-2x"></div>
 	        <% end %>        
 	      </div>
 	      <div class="small-6 columns end text-center" data-no-turbolink>
@@ -104,7 +104,8 @@
 
 	<% if (@story.category_id == 4) %>
 		<div class="row">
-			<div class="small-6 small-offset-1 columns"> 
+			<div class="small-6 small-offset-1 columns">
+				<br /> 
 				<% if @story.comments.count == 0 %>
 					<div class="fa fa-comment-o fa-2x comment_link_med"> <%= @story.comments.count %> comments</div>
 				<% else %>
