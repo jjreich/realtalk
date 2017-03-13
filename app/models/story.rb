@@ -1,6 +1,5 @@
 class Story < ActiveRecord::Base
-  is_impressionable
-
+    is_impressionable
 
 	has_many :sections
 	has_many :comments
