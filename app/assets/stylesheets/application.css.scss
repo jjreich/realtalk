@@ -45,6 +45,12 @@
  	color: white;
  }
 
+ .below_the_line {
+
+    position: relative;
+    top: 270px;
+ }
+
  .bottom_element {
 
  	margin-bottom: 30px;
@@ -61,7 +67,7 @@
  	border-radius: .5em;
  	padding-top: .7em;
  	padding-bottom: .7em;
- 	bottom: 60px;
+ 	bottom: 20px;
  }
 
  .comment_link {
@@ -199,8 +205,8 @@
  .swipe_up {
 
  	color: #AAA;
- 	position: fixed;
- 	bottom: 60px;
+ 	position: absolute;
+ 	top: 700px;
  }
 
  .user_name {

@@ -1,5 +1,5 @@
 <div id="mydiv>">
-	<div class="sticky">
+	<div class="">
 
 	  <nav class="top-bar appName" data-topbar role="navigation">
 
@@ -143,20 +143,26 @@
 			</div>
 		</div>
 	<% end %>
+
+	<% if @story.category_id == 3 %>
+		<div class="row">
+			<div class="small-12 text-center below_the_line">
+				<div class="small-10 small-offset-1 columns bottom_element">
+					<% @story.comments.order(created_at: :desc).each do |comment|%> 
+						<div><%= comment.body %></div>
+					<% end %>
+				</div>	
+			</div>
+		</div>
+	<% end %>
 </div>
 
 <script>
 
-$(function() {
-  $("#mydiv").swipe( {
-    //Generic swipe handler for all directions
-    swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-      $(this).text("You swiped " + direction );  
-    }
-  });
-
-  //Set some options later
-  $("#mydiv").swipe( {fingers:2} );
+$(document).ready(function() { 
+	var windowHeight = $(window).height();
+	var pageBottom = windowHeight - 40;
+	$(".swipe_up").css('top', pageBottom + 'px');
 });
 
 </script>
