@@ -1,3 +1,24 @@
+  <div class="sticky">
+
+    <nav class="top-bar appName" data-topbar role="navigation">
+
+      <div class="row">
+        <div class="small-3 columns text-left" data-no-turbolink>
+          <%= link_to root_path do %>
+            <div id="bars" class="fa fa-bars fa-2x"></div>
+          <% end %>        
+        </div>
+        <div class="small-6 columns end text-center" data-no-turbolink>
+          <%= link_to root_path do %>
+            <h1>Real Talk</h1>
+          <% end %>
+        </div>
+      </div>
+
+    </nav>
+
+  </div>
+
 <p id="notice"><%= notice %></p>
 
 <% @comments.order(created_at: :asc).each do |comment| %>

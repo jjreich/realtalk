@@ -1,13 +1,37 @@
 <%= simple_form_for(@comment) do |f| %>
   <%= f.error_notification %>
 
+  <div class="sticky">
+
+    <nav class="top-bar appName" data-topbar role="navigation">
+
+      <div class="row">
+        <div class="small-3 columns text-left back_button" data-no-turbolink>
+          <%= link_to 'Cancel', :back, id: 'back_button' %>
+        </div>
+        <div class="small-6 columns end text-center" data-no-turbolink>
+          <%= link_to root_path do %>
+            <h1>Comment</h1>
+          <% end %>
+        </div>
+        <div class="small-3 columns text-right" data-no-turbolink>
+	      <div class="form-actions">
+		    <%= f.submit  "Submit", class: "submit_button" %>
+		  </div>
+	    </div>
+      </div>
+
+
+    </nav>
+
+  </div>
+
+
+
   <div class="form-inputs">
     <%= f.input :body, :placeholder => "Tell us what you think about this story...", label: false %>
   </div>
 
   <%= f.hidden_field :story_id %>
   
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
 <% end %>
