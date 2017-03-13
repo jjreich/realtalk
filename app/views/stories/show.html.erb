@@ -1,143 +1,161 @@
-<div class="sticky">
+<div id="mydiv>">
+	<div class="sticky">
 
-  <nav class="top-bar appName" data-topbar role="navigation">
+	  <nav class="top-bar appName" data-topbar role="navigation">
 
-    <div class="row">
-      <div class="small-3 columns text-left" data-no-turbolink>
-        <%= link_to root_path do %>
-          <div class="fa fa-bars fa-2x"></div>
-        <% end %>        
-      </div>
-      <div class="small-6 columns end text-center" data-no-turbolink>
-        <%= link_to root_path do %>
-          <h1>Story: <%= Category.find(@story.category_id).name %></h1>
-        <% end %>
-      </div>
-    </div>
+	    <div class="row">
+	      <div class="small-3 columns text-left" data-no-turbolink>
+	        <%= link_to root_path do %>
+	          <div class="fa fa-bars fa-2x"></div>
+	        <% end %>        
+	      </div>
+	      <div class="small-6 columns end text-center" data-no-turbolink>
+	        <%= link_to root_path do %>
+	          <h1>Story: <%= Category.find(@story.category_id).name %></h1>
+	        <% end %>
+	      </div>
+	    </div>
 
-  </nav>
+	  </nav>
 
-</div>
-
-<p id="notice"><%= notice %></p>
-
-<div class="row">
-	<div class="small-12 columns text-center created_at_time">
-		<%= @story.created_at.strftime("%A %I:%M%p") %>
 	</div>
-</div>
 
-<% if @story.category_id == 1 %>
+	<p id="notice"><%= notice %></p>
 
 	<div class="row">
-		<div class="small-4 small-offset-1 columns"> 
-			<% if @story.comments.count == 0 %>
-				<div class="fa fa-comment-o fa-2x comment_link_med"> <%= @story.comments.count %></div>
-			<% else %>
-				<%= link_to comments_path(:story_id => @story.id) do %>
-			  		<div class="fa fa-comment-o fa-2x comment_link_med"> <%= @story.comments.count %></div>
-			  	<% end %>
-			<% end %>
+		<div class="small-12 columns text-center created_at_time">
+			<%= @story.created_at.strftime("%A %I:%M%p") %>
 		</div>
 	</div>
 
-<% end %>
+	<% if @story.category_id == 1 %>
 
-<% @story.sections.each do |section| %>
-
-	<div class="row">
-		<div class="small-10 small-offset-1 columns section_bubble">
-			<%= section.body.html_safe %>
+		<div class="row">
+			<div class="small-4 small-offset-1 columns"> 
+				<% if @story.comments.count == 0 %>
+					<div class="fa fa-comment-o fa-2x comment_link_med"> <%= @story.comments.count %></div>
+				<% else %>
+					<%= link_to comments_path(:story_id => @story.id) do %>
+				  		<div class="fa fa-comment-o fa-2x comment_link_med"> <%= @story.comments.count %></div>
+				  	<% end %>
+				<% end %>
+			</div>
 		</div>
-	</div>
-<% end %>
 
-<% if @story.category_id == 2 %>
-	<div class="small-10 small-offset-1 columns section_bubble2 "> 
-		<img src='http://thehealthinfosite.com/wp-content/uploads/2016/12/Fotolia_94179560_S.jpg'>
-	</div>
-	<div class="small-10 small-offset-1 columns section_bubble3">
-		<p>Puberty: It's the Zits!</p>
-		<p class="lighter_color">One of the more annoying changes during puberty happens to your skin. Yup, we're talking about acne...
-		</p>
-		<p class="lighter_color">pbskids.org
-		</p>
+	<% end %>
 
-		</div>
-	</div>
-<% end %>
+	<% @story.sections.each do |section| %>
 
-<% if @story.category_id == 3 %>
-	<div class="small-10 small-offset-1 columns section_bubble4 "> 
-		<p>Proud to be <u style="color:blue;">#transgender</u></p>
-	</div>
-	<div class="small-10 small-offset-1 columns text-center section_bubble3">
-		<p style="color:blue;">More on #transgender</p>
-	</div>
-<% end %>
-
-<% if (@story.category_id == 2 or @story.category_id == 3) %>
-	<%= link_to new_comment_path(:story_id => @story.id) do %>
-		<div class="small-10 small-offset-1 comment_link_med columns ">
-			<br />
-			<div class="fa fa-comment-o"></div> Comment
+		<div class="row">
+			<div class="small-10 small-offset-1 columns section_bubble">
+				<%= section.body.html_safe %>
+			</div>
 		</div>
 	<% end %>
-<% end %>
 
-<% if (@story.category_id == 2)%>
-
-	<div class="small-10 small-offset-1 columns">
-		<%= link_to comments_path(:story_id => @story.id) do %>
-			<br />
-			View all <%= @story.comments.count %> comments
-		<% end %>
-	</div>
-
-	<div class="small-10 small-offset-1 columns">
-		<% @story.comments.order(created_at: :desc).first(2).each do |comment|%> 
-			<%= comment.body %>
-		<% end %>
-	</div>
-<% end %>
-
-<% if (@story.category_id == 4) %>
-	<div class="row">
-		<div class="small-6 small-offset-1 columns"> 
-			<% if @story.comments.count == 0 %>
-				<div class="fa fa-comment-o fa-2x comment_link_med"> <%= @story.comments.count %> comments</div>
-			<% else %>
-				<%= link_to comments_path(:story_id => @story.id) do %>
-			  		<div class="fa fa-comment-o fa-2x comment_link_med"> <%= @story.comments.count %> comments</div>
-			  	<% end %>
-			<% end %>
+	<% if @story.category_id == 2 %>
+		<div class="small-10 small-offset-1 columns section_bubble2 "> 
+			<img src='http://thehealthinfosite.com/wp-content/uploads/2016/12/Fotolia_94179560_S.jpg'>
 		</div>
-	</div>
-<% end %>
+		<div class="small-10 small-offset-1 columns section_bubble3">
+			<p>Puberty: It's the Zits!</p>
+			<p class="lighter_color">One of the more annoying changes during puberty happens to your skin. Yup, we're talking about acne...
+			</p>
+			<p class="lighter_color">pbskids.org
+			</p>
 
-<br />
-<br />
-
-<% if @story.category_id == 1 %>
-	<%= link_to new_comment_path(:story_id => @story.id) do %>
-		<div class="small-10 small-offset-1 text-center comment_button columns">
-			<div class="fa fa-comment-o"></div> Comment
+			</div>
 		</div>
 	<% end %>
-<% end %>
 
-<% if @story.category_id == 3 %>
-	<div class="row">
-		<div class="small-12 text-center swipe_up">
-			Swipe up to view <%= @story.comments.count %> comment
+	<% if @story.category_id == 3 %>
+		<div class="small-10 small-offset-1 columns section_bubble4 "> 
+			<p>Proud to be <u style="color:blue;">#transgender</u></p>
 		</div>
-	</div>
-<% end %>
+		<div class="small-10 small-offset-1 columns text-center section_bubble3">
+			<p style="color:blue;">More on #transgender</p>
+		</div>
+	<% end %>
 
-<% if @story.category_id == 4 %>
-	<div class="row">
-		<div class="small-12 text-center swipe_up">
-			Swipe up to comment
+	<% if (@story.category_id == 2 or @story.category_id == 3) %>
+		<%= link_to new_comment_path(:story_id => @story.id) do %>
+			<div class="small-10 small-offset-1 comment_link_med columns ">
+				<br />
+				<div class="fa fa-comment-o"></div> Comment
+			</div>
+		<% end %>
+	<% end %>
+
+	<% if (@story.category_id == 2)%>
+
+		<div class="small-10 small-offset-1 columns">
+			<%= link_to comments_path(:story_id => @story.id) do %>
+				<br />
+				View all <%= @story.comments.count %> comments
+			<% end %>
 		</div>
-	</div>
-<% end %>
+
+		<div class="small-10 small-offset-1 columns bottom_element">
+			<% @story.comments.order(created_at: :desc).first(2).each do |comment|%> 
+				<%= comment.body %>
+			<% end %>
+		</div>
+	<% end %>
+
+	<% if (@story.category_id == 4) %>
+		<div class="row">
+			<div class="small-6 small-offset-1 columns"> 
+				<% if @story.comments.count == 0 %>
+					<div class="fa fa-comment-o fa-2x comment_link_med"> <%= @story.comments.count %> comments</div>
+				<% else %>
+					<%= link_to comments_path(:story_id => @story.id) do %>
+				  		<div class="fa fa-comment-o fa-2x comment_link_med"> <%= @story.comments.count %> comments</div>
+				  	<% end %>
+				<% end %>
+			</div>
+		</div>
+	<% end %>
+
+	<br />
+	<br />
+
+	<% if @story.category_id == 1 %>
+		<%= link_to new_comment_path(:story_id => @story.id) do %>
+			<div class="small-10 small-offset-1 text-center comment_button columns">
+				<div class="fa fa-comment-o"></div> Comment
+			</div>
+		<% end %>
+	<% end %>
+
+	<% if @story.category_id == 3 %>
+		<div class="row">
+			<div class="small-12 text-center swipe_up">
+				Swipe up to view <%= @story.comments.count %> comment
+			</div>
+		</div>
+	<% end %>
+
+	<% if @story.category_id == 4 %>
+		<div class="row">
+			<div class="small-12 text-center swipe_up">
+				Swipe up to comment
+			</div>
+		</div>
+	<% end %>
+</div>
+
+<script>
+
+$(function() {
+  $("#mydiv").swipe( {
+    //Generic swipe handler for all directions
+    swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+      $(this).text("You swiped " + direction );  
+    }
+  });
+
+  //Set some options later
+  $("#mydiv").swipe( {fingers:2} );
+});
+
+</script>
