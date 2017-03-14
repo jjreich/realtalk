@@ -26,7 +26,7 @@
   <% if (unique_commenters >= unique_addresses) %>
   	<% commenter_rate = 100 %>
   <% else %>
-  	<% commenter_rate = unique_commenters / unique_addresses * 100 %>
+  	<% commenter_rate = unique_commenters.to_f / unique_addresses.to_f * 100 %>
   <% end %> 
 
   <div class="row">
