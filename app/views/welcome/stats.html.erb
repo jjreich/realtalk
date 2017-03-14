@@ -39,7 +39,7 @@
 
   <div class="row">
   	<div class="small-12 columns">
-		Total number of unique commenters that have left comments: <%= unique_commenters %>
+		Total number of unique commenters that have left comments: <%= number_with_precision(unique_commenters, :precision => 2) %>
 	</div>
   </div>
 
